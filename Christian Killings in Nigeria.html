@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria: The 6.5x Mortality Gap | ORFA Report Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        peril: {
+                            50: '#fff1f1',
+                            100: '#ffdfdf',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            900: '#450a0a',
+                        },
+                        onyx: {
+                            800: '#1a1a1a',
+                            900: '#0f0f0f',
+                            950: '#050505',
+                        },
+                        gold: '#fbbf24'
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #fff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .danger-gradient {
+            background: linear-gradient(135deg, #ef4444 0%, #7f1d1d 100%);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(150px, auto);
+            gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-peril-900/20 rounded-full blur-[120px] animate-pulse-slow"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-peril-600/10 rounded-full blur-[120px] animate-pulse-slow"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl w-full text-center">
+            <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest uppercase border border-peril-500/30 bg-peril-500/10 text-peril-500 rounded-full">
+                ORFA Data Analysis (2019 - 2023)
+            </span>
+            <h1 class="text-5xl md:text-8xl font-display font-extrabold mb-8 tracking-tighter leading-[0.9] text-white">
+                Nigeria's <span class="text-peril-500">6.5x</span> <br/> Mortality Gap
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
+                New quantitative evidence reveals that Christians are <span class="text-white font-semibold">6.5 times more likely</span> to be killed when adjusted for local population density. The myth of religious indifference is over.
+            </p>
+            
+            <div class="mt-12 flex flex-wrap justify-center gap-6">
+                <div class="glass px-8 py-4 rounded-2xl">
+                    <div class="text-4xl font-display font-bold text-white">55,910</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Total Killed</div>
+                </div>
+                <div class="glass px-8 py-4 rounded-2xl border-peril-500/20">
+                    <div class="text-4xl font-display font-bold text-peril-500">8</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Attacks Daily</div>
+                </div>
+                <div class="glass px-8 py-4 rounded-2xl">
+                    <div class="text-4xl font-display font-bold text-white">21,621</div>
+                    <div class="text-xs text-gray-500 uppercase tracking-widest mt-1">Abducted</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <!-- Main Insights Grid -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="bento-grid">
+            
+            <!-- Insight 1: Kill Ratio -->
+            <div class="col-span-1 lg:col-span-2 row-span-2 glass p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-peril-500/40 transition-all duration-500 group">
+                <div>
+                    <h3 class="text-2xl font-display font-bold mb-4 text-white group-hover:text-peril-500 transition-colors">The Lethal Disparity</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Proportional data reveals a staggering 6.5:1 kill ratio between Christians and Muslims when adjusted for state-level demographics. While raw numbers are tragic for all, the vulnerability is dramatically skewed.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-end gap-4">
+                            <div class="w-full bg-onyx-800 h-12 rounded-xl relative overflow-hidden">
+                                <div class="absolute left-0 top-0 h-full bg-peril-600 w-[72%]" title="16,769 Christians"></div>
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xs font-bold text-white uppercase tracking-tighter">16,769 Christians Killed</span>
+                            </div>
+                        </div>
+                        <div class="flex items-end gap-4">
+                            <div class="w-full bg-onyx-800 h-12 rounded-xl relative overflow-hidden">
+                                <div class="absolute left-0 top-0 h-full bg-gray-600 w-[27%]" title="6,235 Muslims"></div>
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xs font-bold text-white uppercase tracking-tighter">6,235 Muslims Killed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-white/5">
+                    <p class="text-sm italic text-gray-500 italic">"Killing is not a byproduct of geographic proximity but a result of deliberate targeting."</p>
+                </div>
+            </div>
+
+            <!-- Insight 2: Abductions -->
+            <div class="col-span-1 lg:col-span-2 glass p-8 rounded-[2.5rem] hover:border-peril-500/40 transition-all duration-500">
+                <div class="flex flex-col h-full justify-between">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold mb-4 text-white">Fivefold Abduction Risk</h3>
+                        <p class="text-sm text-gray-400 mb-6">Kidnapping is used as a tool of demographic pressure to empty regions of Christian populations.</p>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <div class="text-6xl font-display font-extrabold text-peril-500">5.1x</div>
+                        <div class="text-xs uppercase tracking-widest text-gray-500 font-semibold leading-tight">Proportional<br/>Abduction Ratio<br/>(Christian : Muslim)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight 3: FEM vs Boko Haram -->
+            <div class="col-span-1 lg:col-span-2 glass p-8 rounded-[2.5rem] bg-gradient-to-br from-onyx-950 to-onyx-900 border-peril-500/20">
+                <h3 class="text-2xl font-display font-bold mb-4 text-white">The Deadliest Force</h3>
+                <p class="text-gray-400 text-sm mb-6">The Fulani Ethnic Militia (FEM) toll significantly outpaces established terror brands like Boko Haram.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/5 p-4 rounded-2xl">
+                        <div class="text-3xl font-display font-bold text-white">23,987</div>
+                        <div class="text-[10px] uppercase text-gray-500 font-bold mt-1">Killed by FEM</div>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-2xl">
+                        <div class="text-3xl font-display font-bold text-gray-400">3,079</div>
+                        <div class="text-[10px] uppercase text-gray-500 font-bold mt-1">Killed by BH/ISWAP</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight 4: Specific Targeting -->
+            <div class="col-span-1 lg:col-span-1 glass p-8 rounded-[2.5rem] flex flex-col justify-center text-center">
+                <div class="text-5xl font-display font-black text-white mb-2">55%</div>
+                <div class="text-xs font-bold text-peril-500 uppercase tracking-widest leading-tight">of Christian Deaths<br/>Attributed to Armed<br/>Fulani Herdsmen</div>
+                <p class="text-xs text-gray-500 mt-4 px-2">9,153 specific murders linked to one aggressor group.</p>
+            </div>
+
+            <!-- Insight 5: Daily Reality -->
+            <div class="col-span-1 lg:col-span-1 glass p-8 rounded-[2.5rem] danger-gradient border-none relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform duration-700">
+                    <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M13 14H11V9H13V14M13 18H11V16H13V18M1 21H23L12 2L1 21Z"></path></svg>
+                </div>
+                <div class="relative z-10 flex flex-col h-full justify-between">
+                    <div class="text-white/80 text-xs font-bold uppercase tracking-widest mb-2">Relentless Pace</div>
+                    <div class="text-4xl font-display font-black text-white">8 DAILY</div>
+                    <p class="text-white/90 text-sm font-medium mt-2 leading-tight">Killings or Abductions for 1,460 consecutive days.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Deep Dive / Skeptic Check Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-1">
+                <h2 class="text-4xl font-display font-bold text-white mb-6">Data Integrity & Context</h2>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Critics point to "Unknown Religious Identity" as a potential skew. 7,722 victims remain unidentified.
+                </p>
+                <div class="p-6 rounded-2xl bg-peril-500/5 border border-peril-500/20">
+                    <p class="text-sm font-semibold text-peril-500">SKEPTIC CHECK</p>
+                    <p class="text-sm text-gray-300 mt-2">
+                        Even if 100% of unknown victims were Muslim, the proportional vulnerability for Christians would remain significantly higher across all targeted zones.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-2 grid sm:grid-cols-2 gap-6">
+                <!-- IDP Note -->
+                <div class="glass p-8 rounded-3xl">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                        </div>
+                        <span class="font-bold text-white uppercase tracking-widest text-xs">Humanitarian Toll</span>
+                    </div>
+                    <h4 class="text-3xl font-display font-bold text-white mb-2">3.3 Million</h4>
+                    <p class="text-gray-400 text-sm">Internally Displaced Persons (IDPs) as of end 2023. Terror is effectively redesigning the country's demographic map.</p>
+                </div>
+
+                <!-- Peak Year -->
+                <div class="glass p-8 rounded-3xl">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-peril-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </div>
+                        <span class="font-bold text-white uppercase tracking-widest text-xs">Escalation Phase</span>
+                    </div>
+                    <h4 class="text-3xl font-display font-bold text-white mb-2">2021/2022</h4>
+                    <p class="text-gray-400 text-sm">Peak violence years. 2021 saw 9,940 civilian killings; 2022 saw 7,705 abductions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Postable Summaries Carousel Area -->
+    <section class="bg-onyx-950 py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-peril-500 mb-12 text-center">Summary Insights</h2>
+            
+            <div class="flex flex-nowrap overflow-x-auto gap-6 pb-12 snap-x no-scrollbar">
+                
+                <!-- Card 1 -->
+                <div class="min-w-[320px] md:min-w-[400px] snap-center glass p-8 rounded-[2rem] border-white/5 flex flex-col h-[400px] justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Postable Insight 1</span>
+                        <h3 class="text-xl font-bold text-white mt-4 leading-tight">The Truth About Nigeria's Death Toll: It's Not Indifferent</h3>
+                        <p class="text-sm text-gray-400 mt-4 leading-relaxed">Adjusted for where they live, Christians are 6.5x more likely to be killed. This is mathematical reality, not anecdotal claim.</p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-peril-500 text-xs font-bold">#ReligiousFreedom</span>
+                        <span class="text-gray-600 text-[10px]">Source: ORFA</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="min-w-[320px] md:min-w-[400px] snap-center glass p-8 rounded-[2rem] border-white/5 flex flex-col h-[400px] justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Postable Insight 2</span>
+                        <h3 class="text-xl font-bold text-white mt-4 leading-tight">5.1 Times More Likely: The Christian Abduction Crisis</h3>
+                        <p class="text-sm text-gray-400 mt-4 leading-relaxed">Kidnapping is used as a weapon of displacement, stripping communities of assets. 11,185 Christians abducted in 4 years.</p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-peril-500 text-xs font-bold">#EndTerror</span>
+                        <span class="text-gray-600 text-[10px]">Source: ORFA</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="min-w-[320px] md:min-w-[400px] snap-center glass p-8 rounded-[2rem] border-white/5 flex flex-col h-[400px] justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Postable Insight 3</span>
+                        <h3 class="text-xl font-bold text-white mt-4 leading-tight">Nigeria's Deadliest and Most Overlooked Force: FEM</h3>
+                        <p class="text-sm text-gray-400 mt-4 leading-relaxed">Fulani Ethnic Militia responsible for 23,987 deaths. They out-pace Boko Haram by a massive margin.</p>
+                    </div>
+                    <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-peril-500 text-xs font-bold">#FEM</span>
+                        <span class="text-gray-600 text-[10px]">Source: ORFA</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Source Footer -->
+    <div class="max-w-7xl mx-auto px-6 py-12 text-center border-t border-white/5">
+        <p class="text-xs text-gray-500 uppercase tracking-widest">
+            Data Source: Observatory of Religious Freedom in Africa (ORFA) Report <br/> 
+            Analysis Period: Oct 2019 – Sept 2023 | Report Dated: March 14, 2026
+        </p>
+    </div>
+
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+</body>
+</html>
